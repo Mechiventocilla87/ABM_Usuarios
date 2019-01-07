@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet"  href="../stylesheets/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Glegoo|Inconsolata|Titillium+Web:700" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+<body>
+    <div id='box_message' class="box_confirmation hidden">
+        <div class="content_box">
+           <p>¿Está seguro que quiere eliminar este usuario?</p>
+           <button class="button_cancel">Cancelar</button>
+           <button class="button_remove">Eliminar</button>
+        </div>
+    </div>
+    <div class="modal hidden"></div>
+    <section class="first_section">
+        <div class="box_tittle">
+            <div class="tittle">
+                <p>ABM_</p>
+                <p>>Usuarios</p>
+            </div>            
+        </div>           
+    </section>
+    <section class="second_section"> 
+        <div class="box_search">
+            <button class="button_agr">
+                <a href="/users/new">Agregar Usuario</a>
+            </button>
+            <form action="" id="form_filter" class="search" >
+                <input type="text">
+                <button type="button"><i class="fas fa-search"></i></button>
+            </form>
+        </div>
+        <div class="box_table">
+            <table>
+                <tbody class="body_table">
+                    <tr class="row_head">
+                        <th class="name_columns">Nombre</th>
+                        <th class="name_columns">Apellido</th>
+                        <th class="name_columns">Teléfono</th>
+                        <th class="name_columns">Email</th>
+                        <th class="name_columns"></th>
+                        <th class="name_columns"></th>
+                    </tr>
+                </tbody>
+            </table>
+        </div> 
+    </section>                           
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="../javascripts/users.js"></script>
+</body>
+</html>
