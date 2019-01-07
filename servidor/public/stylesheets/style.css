@@ -52,6 +52,15 @@ body .box_confirmation .content_box .button_remove:hover {
   background-color: #dd2831;
 }
 
+body .box_confirmation .content_box .button_location {
+  background-color: #F62F39;
+  font-family: "Inconsolata", monospace;
+  text-transform: uppercase;
+  color: #fffdf9;
+  height: 30px;
+  border: none;
+}
+
 body .modal {
   position: fixed;
   top: 0px;

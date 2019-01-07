@@ -72,6 +72,18 @@ body{
 }
 
 body{
+  .box_confirmation{
+    .content_box{
+      .button_location{
+        @include style_button_red;
+      }
+    }
+  }
+}
+
+
+
+body{
   .modal{    
     position: fixed;
     top:0px;

@@ -88,7 +88,7 @@ $(document).on("click","#put", function () {
         },
 
         success: function(data){
-            // alert('usuario creado');
+            //  alert('usuario creado');
             $('#box_message').removeClass('hidden');
             $('.modal').removeClass('hidden');
             setTimeout(function () {
@@ -97,7 +97,11 @@ $(document).on("click","#put", function () {
 
             },3000);
 
-            location.href= '/users'; 
+            $('#button_volver').on('click', function(){
+                location.href= '/users'; 
+    
+            });
+
         },
         
         

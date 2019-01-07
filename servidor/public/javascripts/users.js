@@ -15,7 +15,7 @@ $.ajax('/api/users')
         <a href="/users/edit?id=${data[i].id}"><i class="fas fa-pencil-alt"></i></a>
         </td>
         <td class="user_edit">
-        <i class="fas fa-trash-alt" id="remove_user"></i>
+        <i class="fas fa-trash-alt" id="remove_user" onclick="eliminar(${data[i].id})"></i>
         </td>
     </tr>`)
     }
@@ -29,14 +29,14 @@ $(document).on('click', '#remove_user', function(){
 }) 
 
 
-$('.button_remove').on('click', function(){
-    $.ajax('/api/users/'+ id,{
-        method: "DELETE",
-        success: function () {
-            $('#' + id).remove();
-        }
-    })
-})
+// $('.button_remove').on('click', function(){
+//     $.ajax('/api/users/'+ id,{
+//         method: "DELETE",
+//         success: function () {
+//             $('#' + id).remove();
+//         }
+//     })
+// })
 
 $('.button_cancel').on('click', function(){
         location.href= '/users'; 
@@ -44,14 +44,14 @@ $('.button_cancel').on('click', function(){
 })
 
 //eliminar(${data[i].id})
-// function eliminar(id) {
-//     $.ajax('/api/users/'+ id,{
-//         method: "DELETE",
-//         success: function () {
-//             $('#' + id).remove();
-//         }
-//     })
-// }
+function eliminar(id) {
+    $.ajax('/api/users/'+ id,{
+        method: "DELETE",
+        success: function () {
+            $('#' + id).remove();
+        }
+    })
+}
 
 
 //filtrar búsqueda
@@ -140,14 +140,19 @@ $('#new').on('click', function() {
       success: function(){
         // alert('usuario creado');
         $('#box_message').removeClass('hidden');
-            $('.modal').removeClass('hidden');
-            setTimeout(function () {
-            $('#box_message').addClass('hidden');
-            $('.modal').addClass('hidden');
+        $('.modal').removeClass('hidden');
+
+        setTimeout(function () {
+        $('#box_message').addClass('hidden');
+        $('.modal').addClass('hidden');
 
         },3000);
-        
-        location.href= '/users'; 
+
+        $('#button_volver').on('click', function(){
+            location.href= '/users'; 
+
+        });
+      
     }
 
   })
