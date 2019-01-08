@@ -35,6 +35,7 @@ function eliminar(id) {
             method: "DELETE",
             success: function () {
                 $('#' + id).remove();
+                // location.href= '/users'; 
                 setTimeout(function () {
                     $('#box_message').addClass('hidden');
                     $('.modal').addClass('hidden');            
