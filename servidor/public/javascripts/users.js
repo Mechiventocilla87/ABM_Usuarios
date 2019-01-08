@@ -1,3 +1,4 @@
+
 //lista de usuarios
 //---------------------------------------
 $.ajax('/api/users')
@@ -19,39 +20,33 @@ $.ajax('/api/users')
         </td>
     </tr>`)
     }
-
 })
 
 
-$(document).on('click', '#remove_user', function(){
-    $('#box_message').removeClass('hidden');
-    $('.modal').removeClass('hidden');
-}) 
+function eliminar(id) { 
+         
+    $(document).on('click', '#remove_user', function(){
+        $('#box_message').removeClass('hidden');
+        $('.modal').removeClass('hidden');
+    
+     $('.button_remove').on('click', function(){
 
+        $.ajax('/api/users/'+ id,{
+            method: "DELETE",
+            success: function () {
+                $('#' + id).remove();
+                location.href= '/users'; 
+            }
+        })
+      })
+    })  
+}
 
-// $('.button_remove').on('click', function(){
-//     $.ajax('/api/users/'+ id,{
-//         method: "DELETE",
-//         success: function () {
-//             $('#' + id).remove();
-//         }
-//     })
-// })
 
 $('.button_cancel').on('click', function(){
-        location.href= '/users'; 
-     
+    location.href= '/users'; 
+ 
 })
-
-//eliminar(${data[i].id})
-function eliminar(id) {
-    $.ajax('/api/users/'+ id,{
-        method: "DELETE",
-        success: function () {
-            $('#' + id).remove();
-        }
-    })
-}
 
 
 //filtrar búsqueda
@@ -152,13 +147,10 @@ $('#new').on('click', function() {
             location.href= '/users'; 
 
         });
-      
+
     }
 
   })
-
-
-
 
 })
 

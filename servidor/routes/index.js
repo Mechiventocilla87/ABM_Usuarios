@@ -52,7 +52,7 @@ router.get('/api/users', function(req, res, next) {
   }
 
   res.json(contenidoDeMiUsers);
-
+  
   console.log(contenidoDeMiUsers);
 
 });
