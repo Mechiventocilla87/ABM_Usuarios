@@ -28,14 +28,18 @@ function eliminar(id) {
     $(document).on('click', '#remove_user', function(){
         $('#box_message').removeClass('hidden');
         $('.modal').removeClass('hidden');
-    
+
      $('.button_remove').on('click', function(){
 
         $.ajax('/api/users/'+ id,{
             method: "DELETE",
             success: function () {
                 $('#' + id).remove();
-                location.href= '/users'; 
+                setTimeout(function () {
+                    $('#box_message').addClass('hidden');
+                    $('.modal').addClass('hidden');            
+                },1000);
+                
             }
         })
       })
