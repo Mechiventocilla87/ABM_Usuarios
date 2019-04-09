@@ -35,8 +35,7 @@ $.ajax('/api/users/'+ myParam)
 $(document).on("click","#put", function () {
     const match_only_letters = /^[a-zA-Z áéíóúÁÉÍÓÚñÑ]/;
     const test_telephone = /^\d{10}$/;
-    const test_email = /^(([^<>()\[\]\\.,;:\s@“]+(\.[^<>()\[\]\\.,;:\s@“]+)*)|(“.+“))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{13}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/ ;
-    
+    const test_email = /^(([^<>()\[\]\\.,;:\s@“]+(\.[^<>()\[\]\\.,;:\s@“]+)*)|(“.+“))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{13}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/ ;    
     let nombre= $('#nombre').val();
     let apellido = $('#apellido').val();
     let telefono = $('#telefono').val();
@@ -46,7 +45,6 @@ $(document).on("click","#put", function () {
         $('.error_name').removeClass('hidden');
         setTimeout(function () {
             $('.error_name').addClass('hidden');
-
         },3000);
     }
     
